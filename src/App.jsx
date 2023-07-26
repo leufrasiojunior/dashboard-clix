@@ -1,10 +1,8 @@
-import Login from './Components/Login';
-// import GlobalStyle from './assets/globalstyle';
+import Login from './Components/Login/index';
 
 function App() {
   return (
     <>
-      {/* <GlobalStyle /> */}
       <Login />
     </>
   )

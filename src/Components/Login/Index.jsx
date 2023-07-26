@@ -1,6 +1,9 @@
 import axios from "axios"
 import { useState } from "react"
-import { Container } from "./style"
+import { Container, Form } from "./style"
+import Input from '../../Components/Input/index'
+
+
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 function Login() {
@@ -19,34 +22,28 @@ function Login() {
   }
   return (
     <Container>
-      <form>
-        <label>Login</label>
-        <div>
-          <label>Nome de usuario</label>
-          <input
-            type="text"
-            placeholder="Usuário 2Clix"
-            onChange={(event) => {
-              createUser(event.target.value)
-            }}
-            value={userName}
-          />
-        </div>
-        <div>
-          <label>Senha</label>
-          <input
-            type="password"
-            placeholder="Senha 2Clix"
-            onChange={(pass) => {
-              setPassword(pass.target.value)
-            }}
-            value={password}
-          />
-        </div>
-        <div>
-          <button onClick={submitLogin}>Login</button>
-        </div>
-      </form>
+      <Form>
+        <h1>Dashboard 2Clix</h1>
+        <label>Nome de usuario</label>
+        <Input
+          type="text"
+          placeholder="Usuário 2Clix"
+          onChange={(event) => {
+            createUser(event.target.value)
+          }}
+          value={userName}
+        />
+        <label>Senha</label>
+        <Input
+          type="password"
+          placeholder="Senha 2Clix"
+          onChange={(pass) => {
+            setPassword(pass.target.value)
+          }}
+          value={password}
+        />
+        <button onClick={submitLogin}>Login</button>
+      </Form>
 
     </Container>
   )
