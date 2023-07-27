@@ -2,7 +2,6 @@ import axios from "axios"
 import { useState } from "react"
 import { Container, Form } from "./style"
 import Input from '../Input/index'
-// import Botao from "../Botao"
 import { BotaoCustomizado } from '../Botao/style'
 
 
@@ -16,7 +15,7 @@ function Login() {
     const payload = { login: userName, senha: password }
     axios.post('https://api.2clix.com.br/v3/Usuario/login', payload)
       .then(response => {
-        console.log(response.data.token);
+        localStorage.setItem('UserToken', response.data.token);
       })
       .catch(error => {
         console.log(error);

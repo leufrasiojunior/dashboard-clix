@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Container = styled.div`
 display: flex;
 justify-content: center;
@@ -24,7 +23,7 @@ flex-direction: column;
 align-items: center;
 justify-content:center;
 background-color:#3f3354;
-border-radius:5px;
+border-radius:20px;
 width:100%;
 max-width: 450px;
 box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.1), 0px 50px 100px -20px rgba(50, 50, 93, 0.25), 0px 30px 60px -30px rgba(0, 0, 0, 0.3);
@@ -38,4 +37,4 @@ margin-bottom:5px;
 /* input{
 margin-bottom:10px;
 } */
-`;
+`
