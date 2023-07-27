@@ -3,23 +3,18 @@ import { useState } from "react"
 import { Container, Form } from "./style"
 import Input from '../Input/index'
 import { BotaoCustomizado } from '../Botao/style'
-
-
+import userServices from "../../Services/UserService"
 axios.defaults.headers.post['Content-Type'] = 'application/json';
+
+const userService = new userServices();
 
 function Login() {
   const [userName, createUser] = useState('')
   const [password, setPassword] = useState('')
-  const submitLogin = (e) => {
-    e.preventDefault()
-    const payload = { login: userName, senha: password }
-    axios.post('https://api.2clix.com.br/v3/Usuario/login', payload)
-      .then(response => {
-        localStorage.setItem('UserToken', response.data.token);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  const submitLogin = async (e) => {
+    e.preventDefault();
+    const response = await userService.login({ login: userName, senha: password }, userName)
+    console.log(response);
   }
   return (
     <Container>
@@ -43,7 +38,6 @@ function Login() {
           }}
           value={password}
         />
-        {/* <button onClick={submitLogin}>Login</button> */}
         <BotaoCustomizado type='submit'
           onClick={submitLogin}>
           Logar

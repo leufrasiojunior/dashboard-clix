@@ -32,7 +32,7 @@ label{
 color: #C5C5C5;
 font-size: 20px;
 font-weight: light;
-margin-bottom:5px;
+margin-bottom:5px;ww
 }
 /* input{
 margin-bottom:10px;
