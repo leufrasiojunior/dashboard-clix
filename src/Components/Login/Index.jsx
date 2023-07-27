@@ -1,7 +1,9 @@
 import axios from "axios"
 import { useState } from "react"
 import { Container, Form } from "./style"
-import Input from '../../Components/Input/index'
+import Input from '../Input/index'
+// import Botao from "../Botao"
+import { BotaoCustomizado } from '../Botao/style'
 
 
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -42,10 +44,13 @@ function Login() {
           }}
           value={password}
         />
-        <button onClick={submitLogin}>Login</button>
+        {/* <button onClick={submitLogin}>Login</button> */}
+        <BotaoCustomizado type='submit'
+          onClick={submitLogin}>
+          Logar
+        </BotaoCustomizado>
       </Form>
-
-    </Container>
+    </Container >
   )
 }
 
