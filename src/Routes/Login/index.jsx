@@ -1,8 +1,8 @@
 import axios from "axios"
 import { useState } from "react"
 import { Container, Form } from "./style"
-import Input from '../Input/index'
-import { BotaoCustomizado } from '../Botao/style'
+import Input from '../../Components/Input/index'
+import { BotaoCustomizado } from '../../Components/Botao/style'
 import userServices from "../../Services/UserService"
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
