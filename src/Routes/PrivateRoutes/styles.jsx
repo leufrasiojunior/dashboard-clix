@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 const styles = styled.div`
-background-color: #123;
+background-color: #0e84f944;
 `
