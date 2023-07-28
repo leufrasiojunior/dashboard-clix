@@ -1,3 +1,5 @@
 import styled from 'styled-components';
 
-const styles = StyleSheet.create
+const styles = styled.div`
+background-color: red;
+`
