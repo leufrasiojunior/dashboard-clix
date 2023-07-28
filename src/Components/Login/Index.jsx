@@ -11,10 +11,18 @@ const userService = new userServices();
 function Login() {
   const [userName, createUser] = useState('')
   const [password, setPassword] = useState('')
+  const [isLoading, setisLoading] = useState(false)
   const submitLogin = async (e) => {
+    setisLoading(true)
     e.preventDefault();
-    const response = await userService.login({ login: userName, senha: password }, userName)
-    console.log(response);
+    try {
+      const response = await userService.login({ login: userName, senha: password }, userName);
+      setisLoading(false)
+    } catch (error) {
+      (error.response.status == 401) ?
+        alert("Senha ou usuário incorretos. Tente novamente")
+        : alert("Informe o código ao lado para o administrador: ", error.response.status)
+    }
   }
   return (
     <Container>
