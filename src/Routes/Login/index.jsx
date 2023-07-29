@@ -4,9 +4,11 @@ import { Container, Form } from "./style"
 import Input from '../../Components/Input/index'
 import { BotaoCustomizado } from '../../Components/Botao/style'
 import userServices from "../../Services/UserService"
+// import { useNavigate } from "react-router-dom"
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const userService = new userServices();
+// const navigate = new useNavigate();
 
 function Login() {
   const [userName, createUser] = useState('')
@@ -21,7 +23,7 @@ function Login() {
     } catch (error) {
       (error.response.status == 401) ?
         alert("Senha ou usuário incorretos. Tente novamente")
-        : alert("Informe o código ao lado para o administrador: ", error.response.status)
+        : alert("Informe o código ao lado para o administrador: Erro 500")
     }
   }
   return (

@@ -1,7 +1,7 @@
 import axios from "axios";
+import { Children } from "react";
 
 axios.defaults.headers.post['Content-Type'] = 'application/json';
-
 
 export default class userServices {
 
@@ -29,7 +29,11 @@ export default class userServices {
             localStorage.setItem('Expiration', futureDateTime)
             return true
         }
+        console.log("Retorno", data)
         return
     }
-
+    userAuthorized(children) {
+        if (localStorage.getItem('token') != null) { return true };
+        // console.log("Token: ", localStorage.getItem('token'))
+    }
 }

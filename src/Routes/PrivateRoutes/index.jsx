@@ -1,9 +1,11 @@
 import React from 'react'
+import { Navigate } from "react-router-dom"
 
-function home() {
+
+function Home({ children }) {
     return (
-        <div>home</div>
+        <div>Home</div>
     )
 }
 
-export default home
+export default Home
